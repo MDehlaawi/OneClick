@@ -1,0 +1,352 @@
+﻿
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f9f9f9;
+    color: #555;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+}
+
+.wave-container {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    
+    top: 0;
+    left: 0;
+    z-index: 0; /* Ensure waves are behind other content */
+}
+
+.wave {
+    position: absolute;
+    width: 2440px;
+    height: 2600px;
+    opacity: 0.6;
+    left: 50%;
+    top: 180%;
+    transform: translate(-30%, -50%);
+    background: linear-gradient(744deg, #af40ff, #5b42f3 60%, #00ddeb);
+    border-radius: 40%;
+    animation: wave 55s infinite linear;
+}
+
+.wave:nth-child(2) {
+    animation-duration: 20s;
+}
+
+.wave:nth-child(3) {
+    animation-duration: 15s;
+}
+
+@keyframes wave {
+    0% {
+        transform: translate(-50%, -50%) rotate(0deg);
+    }
+    100% {
+        transform: translate(-50%, -50%) rotate(360deg);
+    }
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    position: relative;
+    z-index: 1; /* Ensure container is above the waves */
+}
+
+h1 {
+    font-size: 36px;
+    font-family: "Courier New", monospace;
+    color: #7f8c8d;
+    margin-bottom: 40px;
+}
+
+.columns {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 40px;
+}
+
+.column {
+    width: 30%;
+}
+
+.box {
+    background-color: #fff;
+    border: 1px solid #e0e0e0;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    width: 320px;  /* Adjusted fixed width */
+    height: 400px; /* Adjusted fixed height */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* Ensure button group is at the bottom */
+}
+
+.scrollable-list,
+.screens-list {
+    flex-grow: 1;
+    overflow-y: auto;
+    text-align: left; /* Align text to the left */
+    max-height: 200px; /* Set maximum height for scrollbar */
+}
+
+/* Hide scrollbar for WebKit browsers (Chrome, Safari) */
+.scrollable-list::-webkit-scrollbar,
+.screens-list::-webkit-scrollbar {
+    display: none;
+}
+
+/* Hide scrollbar for Firefox */
+.scrollable-list {
+    scrollbar-width: none;
+}
+
+.screens-list {
+    scrollbar-width: none;
+}
+
+/* Hide scrollbar for Internet Explorer and Edge */
+.scrollable-list {
+    -ms-overflow-style: none;
+}
+
+.screens-list {
+    -ms-overflow-style: none;
+}
+
+.button-group {
+    margin-top: auto;
+    display: flex;
+    justify-content: space-around;
+}
+
+.icon {
+    font-size: 24px;
+    color: #95a5a6;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    text-align: left;
+}
+
+li {
+    padding: 5px 0;
+    font-size: 16px;
+}
+
+.remove {
+    color: red;
+    cursor: pointer;
+}
+
+input[type="text"] {
+    width: calc(100% - 20px);
+    padding: 8px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+button {
+    background-color: #7f8c8d;
+    color: white;
+    padding: 10px 20px;
+    margin: 10px 5px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+button.push {
+    background-color: #2980b9;
+}
+
+button.clear {
+    background-color: #e74c3c;
+}
+
+button.add {
+    background-color: #2ecc71;
+}
+
+.preview {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.nav {
+    background-color: transparent;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+    margin: 0 10px;
+}
+
+.preview-screen {
+    background-color: #e0e0e0;
+    width: 150px;
+    height: 100px;
+    margin: 0 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    border-radius: 8px;
+}
+
+.screens-list {
+    max-height: 200px; /* Set maximum height for scrollbar */
+    overflow-y: auto; /* Enable vertical scrollbar */
+    text-align: left; /* Align text to the left */
+}
+
+.screens-list p {
+    display: flex; /* Align checkbox and text */
+    align-items: center; /* Center align checkbox and text */
+}
+
+.screens-list input[type="checkbox"] {
+    margin-right: 10px; /* Add margin to the right of the checkbox */
+}
+
+.button-group {
+    margin-top: 10px;
+}
+
+.image-viewers {
+    margin-top: 20px;
+}
+
+h2 {
+    font-size: 24px;
+    font-weight: bold;
+    font-family: "Courier New", monospace;
+    color: #6c868d;;
+    background-color: rgba(255, 255, 255, 0.6); /* 60% transparency */
+    padding: 10px;
+    border-radius: 8px;
+    text-align: center;
+    margin-bottom: 20px;
+}
+.image-container {
+    display: flex;
+    overflow-x: auto;
+    flex-wrap: wrap;
+    justify-content: center;
+    overflow: visible; /* Allow overflow to be visible */
+}
+
+.image-box {
+    border: 1px solid #ccc;
+    margin: 10px;
+    padding: 20px;
+    text-align: center;
+    background-color: #fff;
+    border-radius: 8px;
+    width: 200px;
+    height: 220px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transition: transform 0.3s ease; /* Add transition for smooth scaling */
+}
+
+.image-box:hover {
+    transform: scale(1.8); /* Scale up the box slightly on hover */
+}
+
+.image-box img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+}
+
+/* New CSS for Import media section */
+/* Styles for the file upload section */
+.file-upload-container {
+    border: 2px dashed #ccc;
+    padding: 10px;
+    margin: 20px 0;
+    text-align: left;
+    background-color: #f9f9f9;
+    border-radius: 5px;
+}
+
+.file-upload-info {
+    margin-bottom: 10px;
+}
+
+.file-upload-info p {
+    margin: 5px 0;
+}
+
+#fileInput {
+    display: block;
+    margin-bottom: 10px;
+}
+
+#fileList {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+#fileList li {
+    display: flex;
+    align-items: center;
+    margin-bottom: 5px;
+}
+
+#fileList img {
+    max-width: 50px;
+    max-height: 50px;
+    margin-right: 10px;
+}
+
+#fileList .file-name {
+    flex-grow: 1;
+}
+
+#fileList .file-size {
+    margin-left: 10px;
+}
+
+#fileList .remove-file {
+    margin-left: 10px;
+    cursor: pointer;
+    color: red;
+    background: none;
+    border: none;
+}
+
+.back-button-container {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    z-index: 2; /* Ensure the button is above other content */
+}
+
+.back-button {
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 18px;
+    color: white;
+    background-color: #5b42f3; /* Use the same purple color as your waves */
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.back-button:hover {
+    background-color: #af40ff; /* Slightly lighter purple on hover */
+}
+

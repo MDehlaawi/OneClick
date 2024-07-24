@@ -1,0 +1,57 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ONE CLICK</title>
+    <link rel="stylesheet" href="OneClick.css">
+</head>
+<body>
+    <div class="back-button-container">
+        <a href="#" class="back-button" onclick="goBack()">Back</a>
+    </div>
+    <div class="wave-container">
+        <div class="wave"></div>
+        <div class="wave"></div>
+        <div class="wave"></div>
+    </div>
+    <div class="container">
+        <h1>Welcome to ONE CLICK!</h1>
+        <div class="columns">
+            <div class="column">
+                <h2>Import media</h2>
+                <div class="file-upload-container"> 
+                    <input type="file" id="fileInput" multiple>
+                    <ul id="fileList"></ul>
+                </div>
+            </div>
+            <div class="column">
+                <h2>Select screens</h2>
+                <div class="box">
+                    <p><input type="checkbox" id="checkAll"> All</p>
+                    <div id="screensList" class="screens-list"></div>
+                    <div class="button-group">
+                        <button class="push">Push</button>
+                        <button class="clear">Clear</button>
+                    </div>
+                </div>
+            </div>
+            <div class="column">
+                <h2>Add new screen</h2>
+                <div class="box">
+                    <p>Screen name <input type="text" id="screenName"></p>
+                    <p>Location <input type="text" id="ipAddress"></p>
+                    <div class="button-group">
+                        <button class="add">Add</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="image-viewers" id="imageViewers">
+            <h2>Screens preview</h2>
+            <div class="image-container" id="imageContainer"></div>
+        </div>
+    </div>
+    <script src="OneClick.js"></script>
+</body>
+</html>

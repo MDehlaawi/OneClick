@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Screen</title>
+    <style>
+        body {
+            text-align: center;
+        }
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+    </style>
+</head>
+<body>
+    <h1 id="screenName"></h1>
+    <div id="imageContainer"></div>
+    
+    <script>
+        function getQueryParam(param) {
+            const urlParams = new URLSearchParams(window.location.search);
+            return urlParams.get(param);
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            const screenName = getQueryParam('name');
+            document.getElementById('screenName').textContent = screenName;
+            const images = JSON.parse(localStorage.getItem(`images-${screenName}`)) || [];
+            const imageContainer = document.getElementById('imageContainer');
+
+            console.log(`Loaded images for ${screenName}`, images);
+
+            if (images.length === 0) {
+                const noImagesMessage = document.createElement('p');
+                noImagesMessage.textContent = "No images to display.";
+                imageContainer.appendChild(noImagesMessage);
+            } else {
+                images.forEach(src => {
+                    const img = document.createElement('img');
+                    img.src = src;
+                    imageContainer.appendChild(img);
+                });
+            }
+        });
+
+        window.addEventListener('storage', (event) => {
+            if (event.key.startsWith('images-')) {
+                const screenName = getQueryParam('name');
+                if (event.key === `images-${screenName}`) {
+                    const imageContainer = document.getElementById('imageContainer');
+                    imageContainer.innerHTML = '';
+                    const images = JSON.parse(event.newValue) || [];
+                    images.forEach(src => {
+                        const img = document.createElement('img');
+                        img.src = src;
+                        imageContainer.appendChild(img);
+                    });
+                }
+            }
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,48 @@
+﻿
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create a New User</title>
+    <link rel="stylesheet" href="registration.css">
+</head>
+<body>
+
+<div class="back-button-container">
+    <a href="#" class="back-button" onclick="goBack()">Back</a>
+</div>
+    
+    <div class="wave-container">
+        <div class="wave"></div>
+        <div class="wave"></div>
+        <div class="wave"></div>
+    </div>
+
+    <div class="form-container">
+        <h1>Create a new user</h1>
+        <form id="createUserForm">
+
+         <label for="email2">User Name:</label>
+            <input type="text" id="email2" placeholder="User name" required>
+
+            <label for="email1">Email:</label>
+            <input type="email" id="email1" placeholder="Email" required>
+            
+            <label for="password1">Password:</label>
+            <input type="password" id="password1" placeholder="Password" required>            
+            
+            <label for="password2">Confirm Password:</label>
+            <input type="password" id="password2" placeholder="Password" required>
+            
+            <div class="admin-checkbox">
+                <label for="admin">Admin</label>
+                <input type="checkbox" id="admin">
+            </div>
+            
+            <button type="submit">Create</button>
+        </form>
+    </div>
+    <script src="registration.js"></script>
+</body>
+</html>
